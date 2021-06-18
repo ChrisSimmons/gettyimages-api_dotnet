@@ -4,12 +4,12 @@ using Xunit;
 
 namespace IntegrationTests
 {
-    public class CredentialsFixture
+    public static class ApiCredentials
     {
-        public string ApiKey { get; }
-        public string ApiSecret { get; }
+        public static string ApiKey { get; }
+        public static string ApiSecret { get; }
 
-        public CredentialsFixture()
+        static ApiCredentials()
         {
             ApiKey = Environment.GetEnvironmentVariable("GETTY_IMAGES_API_API_KEY");
             ApiSecret = Environment.GetEnvironmentVariable("GETTY_IMAGES_API_API_SECRET");
